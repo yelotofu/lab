@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Example: Demo of jQuery fadeToggle plugin in action</title>
+<style type="text/css">
+  body {font-family:Arial, Helvetica, sans-serif; font-size:75%;}
+</style>
+<script type="text/javascript" src="jquery-1.2.3.pack.js"></script>
+<script type="text/javascript">
+    // jQuery fadeToggle plugin
+    jQuery.fn.fadeToggle = function(s, fn){
+        return (this.is(":visible"))
+            ? this.fadeOut(s, fn)
+            : this.fadeIn(s, fn);
+    };
+
+    // utilising fadeToggle to show/hide .content DIV
+    jQuery(function($){
+        var labelHide = 'Click to hide content!';
+        var labelShow = 'Click to show content!';
+        $(".toggler").text(labelHide);
+        $(".toggler").click(function(){
+            var copy = $(".content").is(":visible") ?  labelShow : labelHide;
+            $(".content").fadeToggle();
+            $(this).text(copy);
+        });
+    });
+</script>
+</head>
+<body>
+    <h1>Example: Demo of jQuery fadeToggle plugin in action</h1>
+    <button class="toggler">Button</button>
+    <div class="content">
+        <h2>Lorem Ipsum</h2>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus auctor diam a elit. Nulla diam mauris, tempus a, lobortis et, vulputate at, nisl. Vivamus dolor. Cras dapibus pellentesque lacus. Ut sagittis. Pellentesque ac leo. In adipiscing ultricies risus. Nullam dignissim mi ac dui. Fusce adipiscing. Integer risus diam, mollis ac, laoreet ac, venenatis vitae, tellus. Praesent eget nisi et quam mattis condimentum. Integer sodales odio placerat sapien. Fusce quis tellus at quam rutrum sodales. Curabitur risus velit, commodo aliquet, tristique quis, ornare id, lorem. Curabitur quam nibh, interdum et, consectetuer eu, aliquet vitae, dui.</p>
+        <p>Nullam est mauris, gravida ac, faucibus vitae, fermentum condimentum, nisi. Maecenas fermentum turpis in justo. In arcu leo, volutpat non, lobortis nec, tempor eget, tellus. Nunc lobortis dui vel augue. Nulla nec arcu eget pede auctor commodo. Nulla adipiscing. Vivamus volutpat, dui eu pharetra ornare, orci augue cursus erat, a cursus dui nunc at nisl. Ut dolor. Donec neque orci, placerat et, pulvinar at, tempus a, pede. Nullam hendrerit. Nunc gravida, sapien a pellentesque semper, neque neque adipiscing velit, quis iaculis sapien enim sit amet nisl. Nam at pede.</p>
+    </div>
+</body>
+</html>

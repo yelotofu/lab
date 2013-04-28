@@ -1,0 +1,3 @@
+.ui-flvplayer { width: 384px; height: 198px; }
+.ui-flvplayer object { width: 100%; height: 100%; }
+.ui-flvplayer-controls { overflow: hidden; clear: both; background: #C1C1C1; padding: .2em; }

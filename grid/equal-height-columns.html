@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+        <title>Working with cells in CSS</title>
+		<link rel="stylesheet" type="text/css" media="screen, projection" href="../css/master.css" />
+        <style type="text/css">
+            @media screen {        			
+	        	/* basic grid system */            
+				.grid {display: table;}            
+	            .grid li {display: table-cell;}
+	
+	            /* decorative styling */
+				.grid {border:1px solid #CCC; font-size:.85em;}
+				.grid li {border-left:1px solid #CCC; width:25%;}
+				.grid li:first-child {border-left:none;}			
+				.grid li h2 {background:#DEDEDE url(images/box_start.gif) no-repeat; font-size:1.1em;display:block;color:#484848;padding-left:1px;}
+				.grid li:first-child h2 {padding:0;margin:0;background-image:none;}
+				.grid li h2 span {background:#C8C8C8 url(images/box_bg.gif) repeat-x; display:block;padding:8.5px 10px;}
+				.grid li:hover {background-color:#EAF2FC;}
+				.grid li:hover h2 span {background:#6D6C6C url(images/box_end_selected.gif) repeat-x right top; color:#FFF;}
+				.grid li p {padding:9px 10px;}
+            }
+        </style>
+        <!--[if lte IE 7.0]>
+        <style type="text/css">
+			 @media screen {
+			     /* basic grid system */
+	            .grid {width:100%; height:1%;}
+	            .grid li {display:inline-block; vertical-align:top; height:100%;}
+	            .grid li {display:inline; width:24.9%;}
+				
+			    /* equal column height hack - for IE6 & IE7 only */
+			    .grid {voice-family: "\"}\""; voice-family:inherit; overflow:hidden;}
+			    .grid li {voice-family: "\"}\""; voice-family:inherit; padding-bottom:9999px; margin-bottom:-9999px;}			
+            }
+        </style>
+        <![endif]-->
+        <!--[if lte IE 6.0]>
+        <style type="text/css">
+             @media screen {
+				 html {filter:expression(document.execCommand("BackgroundImageCache", false, true));}
+				 body {behavior:url("/labs/css/csshover2.htc");}			 
+			     .grid li.first {border-left:none;}
+			 }
+        </style>
+        <![endif]-->			
+    </head>
+    <body id="pg">
+    	<div id="mh">
+			<h1>CSS grid layout</h1>	
+			<p>This grid layout demonstrates how to style a list dressed as a table.</p>
+		</div>
+		<div id="bd">
+	    	<ul class="grid">
+	    		<li class="first">
+	    			<h2><span>Lorem ipsum dolor sit amet</span></h2>
+	                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nulla porttitor magna ut elit. Vivamus at magna. Proin tempor tincidunt mauris. Pellentesque suscipit nisl. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur molestie, neque vitae accumsan rutrum, sapien est scelerisque sapien, at scelerisque turpis lorem id dui. Etiam vel est. Praesent non enim ac enim tincidunt convallis. Proin lacus. Suspendisse et augue eu purus molestie accumsan. Morbi commodo lorem vitae arcu. Duis in sem. Duis interdum, ligula eget fringilla mattis, purus nunc lobortis justo, vel mollis mauris felis sed quam. <a href="#">click here</a></p>
+	    		</li>
+				<li>
+	                <h2><span>Quisque mollis</span></h2>                
+	                <p>Quisque mollis, elit ac vehicula malesuada, tellus risus lacinia orci, et mollis orci nisl eu pede. Phasellus id est ut velit feugiat ultricies. Vivamus venenatis. Cras eget eros in lacus rutrum molestie. Phasellus at purus. Aenean varius, arcu a fringilla placerat, est erat tincidunt tortor, ut facilisis felis lacus non justo. Nunc orci sapien, varius ac, porttitor at, lobortis a, risus. Aenean quis pede a magna fermentum elementum. Pellentesque dignissim purus a tellus. Nullam et lacus vestibulum urna vulputate volutpat. Etiam a lorem quis nulla malesuada blandit.</p>
+				</li>
+				<li>
+	                <h2><span>Maecenas tortor tellus</span></h2>                
+	                <p>Maecenas tortor tellus, posuere ac, dictum non, luctus eget, turpis. Vestibulum semper leo vel pede. Integer tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse vitae est. Mauris vehicula tincidunt augue. Quisque urna. Phasellus in tellus. Suspendisse vestibulum dui eu nunc. In laoreet consectetuer sapien. Praesent porttitor tempor velit. Suspendisse porta, tellus faucibus tempor commodo, massa libero faucibus purus, vitae fermentum sapien neque quis augue. Vestibulum gravida. Sed et purus sed nibh placerat accumsan. Sed lacinia, eros vel scelerisque faucibus, pede purus iaculis libero, sit amet auctor diam mi non velit. Sed non lacus sit amet augue blandit venenatis. Praesent venenatis eros in nisl. Sed tincidunt, felis non fermentum ultrices, leo justo elementum tortor, a placerat tellus nunc eu neque. Mauris pretium, ligula vel faucibus bibendum, risus lectus adipiscing est, eget vestibulum lectus nunc a nisi. In eget tortor.</p>				
+				</li>
+				<li>
+	                <h2><span>Donec ultricies est eget ligula</span></h2>
+					<p>Donec ultricies est eget ligula. Maecenas non augue. Morbi rutrum. Suspendisse placerat. Mauris lorem. Fusce ipsum. Vestibulum auctor mauris eget quam. Praesent sem. Integer et erat vitae tortor aliquet iaculis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In sed ante. In consequat quam non magna.</p>					                								
+				</li>
+	    	</ul>
+        </div>
+		<div id="ft">
+			<p class="nav"><a href="#">Back to article</a></p>
+			<p>&copy; 2008 Yelotofu. Some rights reserved.</p> 
+		</div>
+    </body>
+</html>

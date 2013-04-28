@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Scroll to bottom Test page</title>
+
+<script type="text/javascript" src="../jquery-1.2.6.js"></script>
+<script type="text/javascript">
+
+$(function(){
+	if(!window.console) {
+		$('#log').css({overflow:'auto',width:'300px',height:'100px',fontSize:'10px',border:'2px inset #ccc',backgroundColor:'#f4f4f4'});
+		window.console = {
+			log: function() {
+				$('#log').append(arguments[0]+"<br>");
+				$('#log').scrollTop(999999);
+			}
+		};
+	}
+	
+	$('.top').click(function(e){
+		e.preventDefault();
+		$('#box').animate({scrollTop: 0});
+	});
+	$('.bot').click(function(e){
+		e.preventDefault();
+		//$('#box').animate({scrollTop: $('#box > .inner').outerHeight()});
+		$('#box').animate({scrollTop: $('#box')[0].scrollHeight});
+	});
+	$('.check').click(function(e){
+		e.preventDefault();
+		var elem = $('#box');
+		var inner = $('#box > .inner');
+		console.log('outer: height: '+ elem.height());
+		console.log('outer: outerHeight: '+ elem.outerHeight());
+		console.log('outer: scrollHeight: '+ elem[0].scrollHeight);
+		console.log('outer: clientHeight: '+ elem[0].clientHeight);
+		console.log('outer: scrollTop: '+ elem.scrollTop());
+		console.log('outer: top: '+ elem.offset().top);
+		console.log('inner: height: '+ inner.height());
+		console.log('inner: outerHeight: '+ inner.outerHeight());
+		console.log('inner: scrollTop: '+ inner.scrollTop());
+		console.log('inner: top: '+ inner.offset().top);
+		
+		var msg = '';
+		
+		// check if we're at the bottom with scrollTop
+		if (elem[0].scrollHeight - elem.scrollTop() == elem.outerHeight()) {
+			msg += '[1] checked with scrollHeight.\n';
+		}
+		
+		// check if we're at the bottom - equals does not work in FF2 hence we need to do >=
+		if ( Math.abs(inner.offset().top) + elem.height() + elem.offset().top >= inner.outerHeight() ) {
+			msg += '[2] checked with offset.\n';
+		}
+		if (msg) {
+			alert(msg);
+		}
+	});
+});
+</script>
+</head>
+
+<body style="background: #ff0;">
+<p>
+	<button class="top">scroll to top</button>
+	<button class="bot">scroll to bottom</button>
+	<button class="check">check position</button>
+</p>
+
+<div id="box" style="width:300px; height:300px; background: #FFF; overflow:auto;">
+	<div class="inner">
+		<p>Lorem ipsum an per sonet possim nominavi, his sapientem scriptorem ad. Per ex periculis sententiae, ei dolorem mentitum elaboraret mei, mel ea novum utamur habemus. Ex simul ponderum legendos pro, minim accusam per eu. Illud scaevola detraxit per no, vix semper scaevola ne. Viderer oportere senserit ad eum.</p>
+		<p>Ius eu zzril cotidieque, omnium volutpat ex vim. Mel an brute maiorum. Paulo eleifend persequeris an pro, te omnium delectus concludaturque pro. Falli forensibus vix ut, facilisis ullamcorper ius et, sed id movet eirmod maiestatis. Ocurreret conclusionemque ea eam. No prima repudiare sit, ne populo nemore urbanitas has.</p>
+		<p>Timeam suscipit corrumpit pri no. In has erroribus instructior, quo ut sonet malorum. An alienum platonem vim, mea ut audire epicurei. Sale idque appellantur per id, sint offendit prodesset ei duo, vim ex eius quaestio honestatis.</p>
+		<p>Cu discere ornatus fabellas eam, sed magna noster discere ea. Mea eu consulatu instructior, ne nisl voluptatum mel, in vel fastidii evertitur. Homero munere ancillae sed ne, debet delectus definitiones te pri, iusto pertinax gloriatur mei ne. Eirmod utroque appellantur nec te, reque phaedrum splendide duo eu, id nullam erroribus sed. Vim aliquyam salutandi reprimique ut.</p>
+		<p>An mei veritus volumus ancillae. Te eum veritus consulatu, ad qui veniam laudem conceptam, tation forensibus te est. Illum vocent voluptaria nam ut, laboramus mnesarchum ex ius. Nibh qualisque reprehendunt usu te. Eu legendos laboramus concludaturque usu, usu in nibh iusto probatus. Etiam possim eum ne.</p>
+	</div>
+</div>
+
+<div id="log"></div>
+
+<br /><br />
+
+<p><a href="http://yelotofu.com/2008/10/jquery-how-to-tell-if-youre-scroll-to-bottom/">Read original blog post</a></p>
+
+</body>
+</html>

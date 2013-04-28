@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Simple Datepicker</title>
+	<link rel="stylesheet" href="all.css" type="text/css">
+	<link rel="stylesheet" href="./themes/base/ui.all.css" type="text/css">
+	<script type="text/javascript" src="../jquery/jquery-1.2.6.js"></script>
+	<script type="text/javascript" src="./ui/ui.core.js"></script>
+	<script type="text/javascript" src="./ui/ui.datepicker.js"></script>
+	<script type="text/javascript">
+	$(function() {
+		$("#d1").datepicker();
+		$("#d2").datepicker({numberOfMonths: 3, showButtonPanel: true});
+		$("#d3").datepicker();
+	});
+	</script>
+</head>
+<body>
+
+<ul class="plugins">
+	<li class="plugin">
+		Datepicker Simple
+		<div>
+			<input type="text" id="d1">
+		</div>
+	</li>
+	<li class="plugin">
+		Datepicker Multi
+		<div>
+			<input type="text" id="d2">
+		</div>
+	</li>
+	<li class="plugin">
+		Datepicker Inline
+		<div id="d3"></div>
+	</li>
+</ul>
+
+</body>
+</html>

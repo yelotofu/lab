@@ -1,0 +1,87 @@
+/*set font size to 10px - not needed but makes the demo look better size wise*/
+body {font-size:62.5%;}
+
+/*UI accordion*/
+.ui-accordion-header a {
+	background: none;
+	position: relative;
+}
+.ui-accordion-header a span {
+	display: block; 
+	position: absolute;
+	left: .6em;
+	top: 50%;
+	margin-top: -3.5px;
+	width: 7px;
+	height: 7px;
+	background: url(images/sprites.gif) -4px -2px no-repeat;
+	overflow: hidden;
+}
+.ui-accordion-header a:hover {
+	background: none;
+}
+.ui-accordion-header a:hover span {
+	background-position: -4px -13px;
+}
+.selected .ui-accordion-header a, .selected .ui-accordion-header a:hover {
+	background: none;
+}
+.selected .ui-accordion-header a span, .selected .ui-accordion-header a:hover span {
+	background-position: -35px -26px;
+	left: .5em;
+	margin-top: -2px;
+}
+
+/*UI dialog*/
+.ui-resizable-se { 
+	cursor: se-resize;
+	width: 13px;
+	height: 13px;
+	right: 0px;
+	bottom: 0px;
+	background: url(images/sprites.gif) -121px -33px no-repeat;
+}
+.ui-dialog-titlebar-close {
+	background: url(images/sprites.gif) -121px 0 no-repeat ;
+}
+.ui-dialog-titlebar-close-hover, .ui-dialog-titlebar-close:hover {
+	background: url(images/sprites.gif) -121px -11px no-repeat ;
+}
+.ui-dialog-titlebar-close:active {
+	background-position: -121px -22px;
+}
+
+/*UI datepicker*/
+.ui-datepicker-next a, .ui-datepicker-prev a,
+.ui-datepicker-next a:hover, .ui-datepicker-prev a:hover,
+.ui-datepicker-next a:active, .ui-datepicker-prev a:active {
+	background: none;
+	position: relative;
+}
+.ui-datepicker-next a span, .ui-datepicker-prev a span {
+	position: absolute;
+	display: block;
+	width: 4px;
+	height: 7px;
+	left: 50%;
+	top: 50%;
+	margin-left: -2px;
+	margin-top: -3.5px;
+	background: url(images/sprites.gif) -14px -2px no-repeat;
+	overflow: hidden;
+}
+.ui-datepicker-next a span {
+	background-position: -4px -2px;
+}
+.ui-datepicker-prev a:hover span {
+	background-position: -14px -13px;
+}
+.ui-datepicker-next a:hover span {
+	background-position: -4px -13px;
+}
+.ui-datepicker-prev a:active span {
+	background-position: -14px -24px;
+}
+.ui-datepicker-next a:active span {
+	background-position: -4px -24px;
+}

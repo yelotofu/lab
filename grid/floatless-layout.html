@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Floatless layouts with table-cell</title>
+<link rel="stylesheet" type="text/css" media="screen, projection" href="../css/master.css" />
+<style type="text/css">
+@media screen {
+    #bd {display:table;}
+    #pc, #sb, #fb {display:table-cell;}
+	#bd, #mh, #ft {width:100%; background:#ccc;}
+	#pc {width:60%; background:#F4F4F4;}
+	#sb {width:20%; background:#999;}
+	#fb {width:20%; background:#DDD;}
+
+	.rel {position:relative;}
+	.feature {position:absolute; top:0; right:0; width:200px; margin-bottom:1em;}
+}
+</style>
+<!--[if lte IE 7.0]>
+<style type="text/css">
+@media screen {
+    #bd {width:100%; height:1%;}
+    #pc, #sb, #fb {display:inline-block;}
+    #pc, #sb, #fb {display:inline; vertical-align:top; height:100%;}
+
+	/* for IE6 & IE7 only */
+	#bd {voice-family: "\"}\""; voice-family:inherit; overflow:hidden;}
+	#pc, #sb, #fb {voice-family: "\"}\""; voice-family:inherit; padding-bottom:9999px; margin-bottom:-9999px;}
+}
+</style>
+<![endif]-->
+</head>
+<body id-"pg">
+	<div id="mh">
+		<h1>This is the masthead</h1>
+	</div>
+    <div id="bd">
+
+		<div id="pc"><div class="rel">
+			<p>Lorem ipsum an per sonet possim nominavi, his sapientem scriptorem ad. Per ex periculis sententiae, ei dolorem mentitum elaboraret mei, mel ea novum utamur habemus. Ex simul ponderum legendos pro, minim accusam per eu. Illud scaevola detraxit per no, vix semper scaevola ne. Viderer oportere senserit ad eum.</p>
+			<p>Ius eu zzril cotidieque, omnium volutpat ex vim. Mel an brute maiorum. Paulo eleifend persequeris an pro, te omnium delectus concludaturque pro. Falli forensibus vix ut, facilisis ullamcorper ius et, sed id movet eirmod maiestatis. Ocurreret conclusionemque ea eam. No prima repudiare sit, ne populo nemore urbanitas has.</p>
+			<p>Timeam suscipit corrumpit pri no. In has erroribus instructior, quo ut sonet malorum. An alienum platonem vim, mea ut audire epicurei. Sale idque appellantur per id, sint offendit prodesset ei duo, vim ex eius quaestio honestatis.</p>
+			<p>Cu discere ornatus fabellas eam, sed magna noster discere ea. Mea eu consulatu instructior, ne nisl voluptatum mel, in vel fastidii evertitur. Homero munere ancillae sed ne, debet delectus definitiones te pri, iusto pertinax gloriatur mei ne. Eirmod utroque appellantur nec te, reque phaedrum splendide duo eu, id nullam erroribus sed. Vim aliquyam salutandi reprimique ut.</p>
+			<p>An mei veritus volumus ancillae. Te eum veritus consulatu, ad qui veniam laudem conceptam, tation forensibus te est. Illum vocent voluptaria nam ut, laboramus mnesarchum ex ius. Nibh qualisque reprehendunt usu te. Eu legendos laboramus concludaturque usu, usu in nibh iusto probatus. Etiam possim eum ne.</p>
+			<p>Ea volumus conceptam vix, eripuit concludaturque ut nam. Mutat causae takimata no qui, cu prompta principes eum. Aliquyam scripserit suscipiantur eu mea. Veniam animal rationibus mel at, ei omittam qualisque duo. Probo quaerendum mediocritatem vim ut. Postulant qualisque per ea, quo modo iriure civibus ne.</p>
+			<p>Ea mea regione elaboraret. Cu eum brute ullum homero. An simul comprehensam mel, mei iusto option id. Vim id fastidii praesent intellegat, an civibus legendos suavitate has. Sed legere virtute deleniti id.</p>
+			<p>Nam semper labores commune ea, libris ancillae necessitatibus sit id. In ius dolores vulputate scribentur, per docendi dolores recusabo at. Clita percipit eleifend te nam, novum civibus singulis id duo, mel ad persecuti intellegam. Tantas voluptua ne usu, omnes nemore insolens ne his.</p>
+			<p>Ne appetere apeirian mandamus vim, ne quo regione maluisset. Et nullam melius ocurreret nam. Populo facete discere duo ad, pri expetenda gubergren eu, te mel error petentium dissentiet. Nec et verear prompta.</p>
+			<p >An pro movet quaestio persecuti, ex commune sensibus constituam quo. Iudico atomorum maluisset sea te. Ut diam porro fierent cum, ex vulputate percipitur vel. Ea vidisse cotidieque eam, duo cu sint malis delenit.</p>
+		</div></div>
+
+       <div id="sb">
+            <h2>Sidebar</h2>
+            <ul>
+                <li>link 1</li>
+                <li>link 2</li>
+                <li>link 3</li>
+                <li>link 3</li>
+                <li>link 3</li>
+                <li>link 3</li>
+                <li>link 3</li>
+            </ul>
+        </div>
+
+        <div id="fb">
+            <h2>Farbar</h2>
+            <ul>
+                <li>link 1</li>
+                <li>link 2</li>
+                <li>link 3</li>
+                <li>link 3</li>
+                <li>link 3</li>
+                <li>link 3</li>
+                <li>link 3</li>
+            </ul>
+        </div>
+    </div>
+	<div id="ft">
+		<p>&copy; Here's some copyright info.</p>
+	</div>
+</body>
+</html>

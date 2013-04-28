@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <title>Text Selection</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./jwysiwyg/jwysiwyg/jquery.wysiwyg.css" type="text/css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+    <script type="text/javascript" src="./jwysiwyg/jwysiwyg/jquery.wysiwyg.js"></script>
+
+    <script>
+    $( function() {
+
+        $('#source-url').submit(function(){
+          var url =  'proxy.php?url=http://'+$('#url').val();
+          $("#result").attr("src", url);
+          return false;
+        });
+
+        $('#result').click(function(){
+          alert('you clicked on me!');
+        });
+
+        var text = "";
+        var iframe = $('iframe')[0];
+        
+        function getActiveText() { 
+            //text = (document.all) ? document.selection.createRange().text : document.getSelection();
+            var idoc = iframe.contentDocument || iframe.contentWindow.document;
+            text = idoc.getSelection();
+            return text.toString();
+        }
+
+        $('.copy-title').click(function() {
+            $('input[name=accusation_title]').val( getActiveText() );
+        });
+        
+        $('.copy-text').click(function() {
+            //$('textarea[name=accusation_content]').val( getActiveText() );
+            $( $('#wysiwygIFrame')[0].contentDocument || $('#wysiwygIFrame')[0].contentWindow.document).find('body').html( getActiveText() );
+        });
+        
+        $('#wysiwyg').wysiwyg();
+    });
+    </script>
+</head>
+<body>
+    <form id="source-url" action="" method="post">
+        http://<input type="text" name="url" id="url" size="60"> <input type="submit" name="grab" value="Show the page!"><br>
+        Accusation Title: <input type="text" name="accusation_title">
+        Accusation Text:<br>
+        <textarea id="wysiwyg" name="accusation_content" rows="10" cols="55"></textarea>
+    </form>
+    <iframe id="result" src="contents.html" width="800" height="300"></iframe><br>
+    <button class="copy-title">Copy title</button>
+    <button class="copy-text">Copy text</button>
+</body>
+</html>

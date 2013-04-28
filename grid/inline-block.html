@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Floatless layouts with inline-block</title>
+<style type="text/css">
+/* for Firefox */
+
+.grid {-moz-box-pack:center; border:1px solid red; width:100%; display:block;}
+/*
+.grid li {display:-moz-inline-stack; width:45%; border:1px solid red;}
+.grid li * {position:relative;}
+*/
+.grid li {display:block; width:300px;}
+	
+.grid li {display:inline-block;}
+</style>
+<!--[if lte IE 7.0]>
+<style type="text/css">
+.grid li {display:inline;}
+</style>
+<![endif]--> 
+</head>
+
+<ul class="grid">
+    <li>
+        <div>    	    	
+	        <img src="http://darlow:8080/images/blank.gif" width="180" height="100" alt="" style="float:left; margin-right:15px; margin-bottom:5px; border:1px solid red;" />
+	        <h3>Battle of the Somme</h3>
+	        <p>1 x 120 for Channel 4, NGC and NGCI<br />
+	        Drama/documentary to mark the 90th anniversary of the battle of the Somme, the bloodiest single day in the history of warfare.</p>
+		</div>        		        
+    </li>   
+    <li>
+        <div>
+            <img src="http://darlow:8080/images/blank.gif" width="180" height="100" alt="" style="float:left; margin-right:15px; margin-bottom:5px; border:1px solid red;" />
+            <h3>Tattle of the Somme</h3>
+            <p>1 x 120 for Channel 4, NGC and NGCI<br />
+
+            Drama/documentary to mark the 90th anniversary of the battle of the Somme, the bloodiest single day in the history of warfare.</p>
+        </div>
+    </li>   
+    <li>
+        <div>
+            <img src="http://darlow:8080/images/blank.gif" width="180" height="100" alt="" style="float:left; margin-right:15px; margin-bottom:5px; border:1px solid red;" />
+            <h3>Battle of the Somme</h3>
+            <p>1 x 120 for Channel 4, NGC and NGCI<br />
+
+            Drama/documentary to mark the 90th anniversary of the battle of the Somme, the bloodiest single day in the history of warfare.</p>
+        </div>
+    </li>   
+    <li>
+        <div>
+            <img src="http://darlow:8080/images/blank.gif" width="180" height="100" alt="" style="float:left; margin-right:15px; margin-bottom:5px; border:1px solid red;" />
+            <h3>Battle of the Somme</h3>
+            <p>1 x 120 for Channel 4, NGC and NGCI<br />
+
+            Drama/documentary to mark the 90th anniversary of the battle of the Somme, the bloodiest single day in the history of warfare.</p>
+        </div>
+    </li>   
+</ul>
+
+</body>
+</html>

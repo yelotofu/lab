@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery: A simple subnav with accordion-like expand/collapse</title>
+<link rel="stylesheet" href="../../master.css" media="screen" />
+<script type="text/javascript" src="../../jquery-1.2.6.js"></script>
+
+<style type="text/css">
+	.subnav {
+		width: 222px;
+		margin: 6px 0 30px;
+		background: url(img/site_subnav_bg.png) repeat-y;
+	}
+	
+	.subnav .subnav-title {
+		background: url(img/site_subnav_tp.png) no-repeat;
+		height: 13px;
+		text-indent: -9999px;
+	}
+	
+	.subnav ul {
+		background: url(img/site_subnav_bt.png) no-repeat left bottom;
+		padding: 0;
+		padding-bottom: 13px;
+		list-style: none;
+		margin-left: 0;
+		margin-bottom: 0;
+	}
+	
+	.subnav li.haschildren a {
+		background: url(img/site_subnav_arrow_rt.png) no-repeat 19px center;
+	}
+	
+	.subnav li.haschildren a:hover,
+	.subnav li.haschildren a.selected,
+	.subnav li.haschildren:hover a {
+		background: #32715A url(img/site_subnav_arrow_dn.png) no-repeat 17px center;
+		color: #FFF;
+	}
+
+	.subnav li li {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	
+	.subnav li.haschildren li a,
+	.subnav li.haschildren:hover li a {
+		background: none;
+		color: #333;
+	}
+
+	.subnav li.haschildren li a:hover,
+	.subnav li.haschildren li a.selected {
+		background: #FFF;
+		color: #333;
+	}
+	
+	.subnav a {
+		font-size: 1.3em;
+		color: #333;
+		text-decoration: none;
+		padding: 3px 27px;
+		padding-right: 2px;
+		display: block;
+		border-left: 1px solid #D1DFDA;
+		border-right: 1px solid #D1DFDA;
+	}
+
+	
+	.subnav ul ul {
+		background: none;
+		padding-bottom: 0;
+	}
+	
+</style>
+
+<script type="text/javascript">
+
+jQuery(function($){
+	
+	$('.subnav ul ul').hide();
+	$('.subnav a').each(function(){
+		if (this.href == location.href) {
+			$(this).parents('ul:first').slideDown('fast').prev().addClass('selected');
+			$(this).addClass('selected');
+			$('+ul', $(this)).slideDown('fast');
+		}
+	});
+	$('.subnav li.haschildren > a').bind('click', function(e){
+		//e.preventDefault();
+		$(this).parent().siblings().find('ul').slideUp('fast').prev().removeClass('selected');
+		$(this).next().slideToggle('fast').prev().toggleClass('selected');
+	});
+	
+});
+
+</script>
+</head>
+
+<body>
+<div id="page">
+	<div id="header">
+		<h1>jQuery: A simple subnav with accordion-like expand/collapse</h1>
+	</div>
+	<div id="content">
+		<div class="subnav">
+			<h2 class="subnav-title">Subnav</h2>
+			<ul>
+				<li class="haschildren"><a href="#">Sites</a>
+					<ul>
+						<li><a href="#">Site 1</a></li>
+						<li class="haschildren"><a href="#">Site 2</a>
+							<ul>
+								<li><a href="#">Site 2.1</a></li>
+								<li><a href="#">Site 2.2</a></li>
+								<li><a href="#">Site 2.3</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Site 3</a></li>
+					</ul>
+				</li>
+				<li class="haschildren"><a class="handle" href="#">Case Studies</a>
+					<ul>
+						<li><a href="#">Cedars Park</a></li>
+						<li><a href="#">Chancery Park</a></li>
+						<li><a href="#">Chatsworth Park</a></li>
+						<li><a href="#">Collingworth Rise</a></li>
+						<li><a href="#">Frome Somerset</a></li>
+					</ul>
+				</li>
+				<li class="haschildren"><a class="handle" href="#">Testimonials</a>
+					<ul>
+						<li><a href="/labs/jquery/snippets/accordion/demo.html">Testimonial 1</a></li>
+						<li><a href="#">Testimonial 2</a></li>
+						<li><a href="#">Testimonial 3</a></li>
+					</ul>
+				</li>
+				<li class="haschildren"><a href="#">Customer base</a>
+					<ul>
+						<li><a href="#">Customer base 1</a></li>
+						<li><a href="#">Customer base 2</a></li>
+						<li><a href="#">Customer base 3</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+</body>
+</html>

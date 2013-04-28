@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>jQuery: Inline Edit - Save, Cancel and Callbacks</title>
+    <link rel="stylesheet" href="../../master.css" media="screen">
+    <style type="text/css">
+        .hover { background-color: #ffC }
+    </style>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+    <script type="text/javascript">
+
+    (function($) {
+
+        $.fn.inlineEdit = function(options) {
+
+            // define some options with sensible default values
+            // - hoverClass: the css classname for the hover style
+            // - save: a callback triggered on save
+            options = $.extend({
+                hover: 'hover',
+                save: ''
+            }, options);
+
+            return $.each(this, function() {
+
+                // define self container
+                var self = $(this);
+
+                // create a value property to keep track of current value
+                self.value = self.text();
+
+                // bind the click event to the current element, in this example it's span.editable
+                self.bind('click', function(event) {
+                    
+                    // for event delegation
+                    var $this = $(event.target);
+
+                    // check if click  was applied to the save button
+                    if ($this.is('button')) {
+                        // create a hash for our callback
+                        var hash = {
+							value: $input = $this.siblings('input').val()
+						};
+                        // check if callback function set and execute it, save only if callback does not returns false
+                        if (($.isFunction(options.save) && options.save.call(self, event, hash)) !== false || !options.save) {
+                            self.value = hash.value;
+                        }
+                        
+                    } else if ($this.is(self[0].tagName)) {
+                        
+                        self
+                            // populate current element with an input element
+                            // and add the current value to it
+                            .html('<input type="text" value="'+ self.value +'"> <button>Save</button>')
+                            // select this newly created input element
+                            .find('input')
+                                // bind the blur event and make it save back the value to the original span area 
+                                // there by replacing our dynamically generated input element
+                                .bind('blur', function() {
+                                    // check if timer is set and clear it if so
+                                    if (self.timer) {
+                                        window.clearTimeout(self.timer);
+                                    }
+                                    // set timer so that blur doesn't immediately convert the input into the
+                                    // non-editable format
+                                    self.timer = window.setTimeout(function() {
+                                        self.text(self.value);
+                                        self.removeClass(options.hover);
+                                    }, 200);
+                                })
+                                // give the newly created input element focus
+                                .focus();
+                    
+                    }
+                })
+                // on hover add hoverClass, on rollout remove hoverClass
+                .hover(
+                    function(){
+                        $(this).addClass(options.hover);
+                    },
+                    function(){
+                        $(this).removeClass(options.hover);
+                    }
+                );
+        });
+    }
+    
+    })(jQuery);
+
+    $(function(){
+        $('.editable').inlineEdit({
+			save: function(e, data) {
+				return confirm('You are about to change your name to "'+ data.value +'"\n\nAre you sure?');
+			}
+		});
+    });
+
+    </script>
+</head>
+<body>
+    <div id="page">
+        <div id="header">
+            <h1>jQuery: Inline Edit - Save, Cancel and Callbacks</h1>
+        </div>
+        <div id="content">
+            <p>A demonstration of the inline edit plugin.</p>
+    
+            <table>
+                <tr><td><span class="editable">Joe Blogg</span></td></tr>
+                <tr><td><span class="editable">John Doe</span></td></tr>
+                <tr><td><span class="editable">Paul White</span></td></tr>
+            </table>
+            <br /><br />
+    
+            <p><a href="http://yelotofu.com/2009/08/jquery-inline-edit-tutorial/">Read original blog post</a></p>
+        </div>
+    </div>
+</body>
+</html>

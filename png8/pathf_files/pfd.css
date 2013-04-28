@@ -1,0 +1,878 @@
+/* basic declarations */
+
+body{
+	background: url(../sites/pfd/img/chrome/bg.png) top left repeat-x #000;
+	color: #fff;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 1.5em;
+}
+abbr,
+acronym {
+	text-decoration: underline;
+}
+abbr:hover,
+acronym:hover {
+	cursor: help;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-family: Helvetica, sans-serif;
+	font-weight: bold;
+	line-height: 1.4em;
+}
+h1 {
+	font-size: 20px;
+}
+h2 {
+	font-size: 16px;
+}
+h3,h4,h5,h6{
+	font-size: 14px;
+}
+h2 a.blogLink {
+	display: block;
+	padding: 0 0 4px 0;
+	font-size: 14px;
+}
+
+h1.small {
+	font-size: 16px;
+}
+h2.small {
+	font-size: 14px;
+}
+h3.small,
+h4,small,
+h5.small,
+h6.small {
+	font-size: 12px;
+}
+
+#rail h3 {
+	font-size: 16px;
+}
+
+h1.highlight,
+h2.highlight,
+h3.highlight,
+h4.highlight,
+h5.highlight,
+h6.highlight {
+	font-style: italic !important;
+	line-height: 1.3em !important;
+	color: #000 !important;
+}
+
+
+/* links */
+a,
+a:link,
+.styleAsLink {
+	color: #08c;/*00aeef*/
+	text-decoration: none;
+}
+a:hover,
+.styleAsLink:hover {
+	color: #444;
+	text-decoration: underline;
+	cursor: pointer;
+}
+a:active {
+
+}
+a:visited {
+
+}
+
+/* standard text tags */
+
+b,
+.b,
+strong,
+.strong {
+	font-weight: bold;
+}
+i,
+.i,
+em,
+.em {
+	font-style: italic;
+}
+
+/* forms */
+
+input,
+textarea,
+select,
+.button {
+	border: 1px solid #999;
+}
+label {
+	display: block;
+	font-weight: bold;
+}
+label input,
+label textarea,
+label select {
+	display: block;
+}
+label input,
+label textarea {
+	padding: 3px;
+}
+
+label.checkbox input,
+label.radio input{
+	float: left;
+	padding: 0;
+}
+label.checkbox span,
+label.radio span{
+	display: block;
+	padding: 0 0 0 18px;
+}
+body .button {
+	background-color: #ddd;
+	margin: 8px 0 !important;
+	padding: 2px 6px;
+	font-weight: bold;
+}
+body div.button {
+	float: left;
+}
+body .button:hover {
+	cursor: pointer;
+}
+body form label input {
+	margin: 0 !important;
+}
+
+/* layout */
+
+#container{
+	width: 850px;
+	margin: 0 auto;
+	padding: 0 50px;
+}
+
+/* layout: header */
+
+#head {
+	margin: 0 0 22px 0;
+}
+#head #headInner {
+	width: 895px;
+	position: relative;
+	left: -45px;
+	margin: 15px 0 0 0;
+}
+#head img#logo {
+	width: 219px;
+	height: 94px;
+	display: block;
+}
+#head h2#tagline {
+	float: right;
+	text-align: right;
+	color: #00aeef;
+	line-height: 1.25em;
+	margin: 50px 0 0 0;
+	font-size: 14px;
+}
+#head h2#tagline span {
+	display: block;
+	color: #fff;
+}
+#promo img.topBanner{
+	width: 869px;
+	height: 180px;
+	display: block;
+}
+
+/* layout: top navigation */
+
+#nav {
+	width: 850px;
+	background: #fff;
+	color: #333;
+}
+#nav input#searchBox {
+	float: right;
+	color: #666;
+	width: 248px;
+	padding: 4px;
+	margin: 4px;
+	font-size: 12px;
+	border: 1px solid #ccc !important;
+}
+
+/* layout: main content area */
+
+#content {
+	width: 850px;
+	background: #fff;
+	color: #333;
+	padding: 0 0 24px 0;
+}
+#content #main {
+	float: left;
+	width: 564px;
+	margin: 0 24px 0 0;
+}
+#content #rail {
+	float: left;
+	width: 262px;
+	overflow: visible;
+}
+#content #rail #railInner {
+	margin: 0;
+	padding: 0;
+}
+/**
+	IE6 fixes for the layout:
+	overflow:visible on the rail won't work, so we must
+	instead absolutely position #railInner and give
+	#main a hard-coded (min-)height to make sure the
+	resulting sidebar doesn't overlap the footer when
+	it grows especially tall
+*/
+* html #content #main {
+	height: 1100px;
+}
+* html #content #rail {
+	position: relative;
+}
+* html #content #rail #railInner {
+	position: absolute;
+}
+
+/* layout: footer */
+
+.footerBL{
+	background: #00aeef url(../sites/pfd/img/chrome/blue/footerBL.png) bottom left no-repeat;
+	display:block;
+	color: #fff;
+	margin: 0 0 0 -42px;
+	width: 892px;
+}
+.footerTL{
+	background: url(../sites/pfd/img/chrome/blue/footerTL.png) top left no-repeat;
+	display: block;
+}
+#footer {
+	background: url(../sites/pfd/img/chrome/blue/footerBR.png) bottom right no-repeat;
+	padding: 0 0 10px 68px;
+}
+
+/* layout: below foter */
+
+#legalAndFeedback {
+	width: 850px;
+	padding: 2px 0px;
+	margin: 0 0 30px 0;
+	font-size: 10px;
+}
+#legalAndFeedback #copyright {
+	float: right;
+	margin: 0 20px;
+}
+#legalAndFeedback #comments {
+	float: left
+	margin: 0 20px;
+}
+#legalAndFeedback #comments {
+	text-transform: uppercase;
+}
+#legalAndFeedback #comments a {
+	text-transform: none;
+}
+
+/* top and bottom navigation lists - should be refactored */
+
+/* top: main */
+
+#nav ul#topNav {
+	background: #fff;
+	padding: 0 0 38px 0;
+}
+#nav ul#topNav li {
+	float: left;
+}
+#nav ul#topNav li a{
+	font: bold 16px Helvetica, Arial, sans-serif;
+	color: #00aeef;
+	display: block;
+	padding: 10px 8px 2px 12px;
+}
+#nav ul#topNav li a:hover,
+#nav ul#topNav li a.current{
+	text-decoration: none;
+	color: #444;
+}
+
+/* top: sub */
+
+#nav ul#subNav {
+	clear: both;
+	background: #fff;
+	padding: 10px 0 16px 76px;
+	margin: -38px 0 0 0;
+}
+#nav ul#subNav li {
+	float: left;
+}
+#nav ul#subNav li a{
+	font: bold 12px Helvetica, Arial, sans-serif;
+	color: #00aeef;
+	display: block;
+	padding: 0 16px 0 0;
+}
+#nav ul#subNav li a:hover,
+#nav ul#subNav li a.current{
+	text-decoration: none;
+	color: #444;
+}
+
+/* bottom: main */
+
+#footer ul#bottomNav {
+	float: left;
+}
+#footer ul#bottomNav li {
+	float: left;
+}
+#footer ul#bottomNav li a{
+	font: bold 12px Helvetica, Arial, sans-serif;
+	color: #fff;
+	display: block;
+	padding: 10px 8px 2px 12px;
+}
+#footer ul#bottomNav li a:hover,
+#footer ul#bottomNav li a.current{
+	text-decoration: none;
+	color: #444;
+}
+
+/* bottom: sub */
+
+#footer ul#footerNav {
+	clear: left;
+}
+#footer ul#footerNav li {
+	float: left;
+}
+#footer ul#footerNav li.hover {
+	cursor: pointer;
+	color: #444;
+}
+#footer ul#footerNav li a{
+	font: bold 16px Helvetica, Arial, sans-serif;
+	color: #fff;
+	display: block;
+	padding: 10px 8px 2px 12px;
+}
+#footer ul#footerNav li.hover a,
+#footer ul#footerNav li a:hover,
+#footer ul#footerNav li a.current{
+	text-decoration: none;
+	color: #444;
+}
+#footer ul#footerNav li p#newsletterPitch{
+	width: 320px;
+	padding: 0 8px 0 12px;
+	line-height: 1em;
+}
+
+/* bottom: contact numbers */
+
+#footer ul.contact {
+	float: right;
+	text-transform: uppercase;
+	margin: 40px 20px 0 0;
+	font: 12px Helvetica, Arial, sans-serif;
+	line-height: 1.5em;
+	width: 200px;
+}
+#footer ul.contact li{
+	text-align: right;
+}
+#footer ul.contact li a{
+	color: #fff;
+}
+#footer ul.contact li a:hover,
+#footer ul.contact li a.current {
+	text-decoration: none;
+	color: #444;
+}
+
+/* modules: left column */
+
+#content #main .articleWrapper {
+	border-top: 3px solid #ccc;
+}
+* html #content #main .articleWrapper {
+	padding-top: 1px !important;
+}
+*+html #content #main .articleWrapper {
+	padding-top: 1px !important;
+}
+#content #main .articleWrapper:first-child,
+#content #main .articleWrapper.firstChild {
+	border-top: none !important;
+}
+#content #main .article {
+	border: 1px dotted #ccc;
+	border-left: 0;
+	padding: 10px 32px 10px 76px;
+	margin: 1px 0;
+}
+#content #main .article .byline {
+	font-size: .9em;
+	margin: 4px 0;
+	font-style: italic;
+}
+#content #main .article .moreBlog {
+	display: block;
+	text-align: right;
+}
+
+/* modules: right rail */
+
+#content #rail .railBlock {
+	width: 282px;
+	background: url(../sites/pfd/img/chrome/blue/railB.png) bottom no-repeat;
+	padding: 0 0 20px 0;
+}
+* html #content #rail .railBlock {
+	/*background-image: none;
+	padding-bottom: 0;*/
+}
+#content #rail .railBlock .header {
+	background: url(../sites/pfd/img/chrome/blue/railTR.png) top right no-repeat;
+}
+#content #rail .railBlock .header h3 {
+	background-color: #00aeef;
+	color: white;
+	width: 90%;
+	padding: 3px 0;
+}
+#content #rail .railBlock .text {
+	background-color: #ebebeb;
+	padding: 5px 1em 0 1em;
+}
+* html #content #rail .railBlock .text {
+	padding-bottom: 1px;
+}
+
+/* modules: highlighted right rail */
+
+#content #rail .railBlock.highlight{
+	background-image: url(../sites/pfd/img/chrome/blue/railHighlightB.png);
+}
+#content #rail .railBlock.highlight .header {
+	background-image: url(../sites/pfd/img/chrome/blue/railHighlightTR.png);
+}
+#content #rail .railBlock.highlight .header h3 {
+	background-color: #000;
+}
+#content #rail .railBlock.highlight .text {
+	background-color: #cceffc;
+}
+
+/* modules: right rail: lists: no bullets, just bottom borders */
+
+#content #rail ul {
+	margin-left: 0;
+	padding-left: 0;
+}
+#content #rail ul li {
+	list-style: none;
+	border-bottom: 1px dashed #fff;
+	padding: 4px 0;
+}
+#content #rail ul li:last-child {
+	border: 0;
+	padding: 4px 0 0 0;
+}
+
+/* common formatting within modules */
+#content #main .article iframe,
+#content #main .article p,
+#content #main .article div,
+#content #main .article blockquote,
+#content #main .article ul,
+#content #main .article ol,
+#content #main .article dl,
+#content #main .article input,
+#content #main .article textarea,
+#content #main .article select,
+#content #main .article label {
+	margin: 0 0 10px 0;
+}
+#content #main .article h1,
+#content #main .article h2,
+#content #main .article h3,
+#content #main .article h4,
+#content #main .article h5,
+#content #main .article h6 {
+	margin: 0 0 4px 0;
+}
+
+#content #rail .text iframe,
+#content #rail .text p,
+#content #rail .text div,
+#content #rail .text blockquote,
+#content #rail .text ul,
+#content #rail .text ol,
+#content #rail .text dl,
+#content #rail .text input,
+#content #rail .text textarea,
+#content #rail .text select,
+#content #rail .text label {
+	padding: 0 0 6px 0;
+}
+#content #rail .text h1,
+#content #rail .text h2,
+#content #rail .text h3,
+#content #rail .text h4,
+#content #rail .text h5,
+#content #rail .text h6 {
+	padding: 0 0 2px 0;
+	line-height: 1.1em;
+}
+
+
+
+/* specific pages: search results */
+
+.searchResults iframe {
+	width: 450px;
+}
+
+/* specific pages: contact us */
+
+#contactForm label input,
+#contactForm label select {
+	width: 300px;
+}
+#contactForm label textarea {
+	width: 400px;
+	height: 100px;
+}
+
+.mapLink {
+	display: block;
+	font-weight: bold;
+}
+
+/* specific pages: jobs */
+
+ul.jobs li span {
+	display: block;
+	font-size: .9em;
+	color: #666;
+}
+
+/* specific page types: case studies */
+
+.caseStudy .imageNoQuote{
+	float: right;
+	margin: 0 0 5px 5px !important;
+}
+.caseStudy .quote img {
+	float: right;
+	margin: 0 0 5px 5px;
+}
+.caseStudy .quote blockquote {
+	font-family: Georgia, "Times New Roman", serif;
+	font-style: italic;
+	font-size: 1.3em;
+	line-height: 1.4em;
+	color: #00aeef;
+}
+.caseStudy .quote div.attr p {
+	font-size: .9em;
+	font-weight: bold;
+	color: #666;
+	margin: 0 !important;
+	line-height: 1.2em;
+}
+.caseStudy .extended {
+	display: none;
+}
+
+/* specific page types: asset landing pages */
+
+ul.asset li {
+	clear: both;
+}
+
+#rail ul.asset a {
+	font-weight: bold;
+}
+#rail ul.asset a.seeAll {
+	font-weight: normal;
+}
+
+/* specific modules: adobe reader */
+
+#content .adobeReader img {
+	display: block;
+	margin: 4px 0 0 0;
+}
+
+/* specific rail modules: sidebar navigation */
+
+#content #rail .railBlock .text.nav {
+	padding: 0;
+}
+#content #rail .railBlock .text.nav ul {
+	padding: 5px 0 0 0;
+}
+#content #rail .railBlock .text.nav ul li {
+	padding-left: 1em;
+	padding-right: 1em;
+}
+/* why the flicker?*/
+#content #rail .railBlock .text.nav ul li.current {
+	margin-bottom: 0;
+	padding: 0;
+}
+#content #rail .railBlock .text.nav ul li.current span{
+	display: block;
+	border-bottom: 1px dashed #fff;
+	padding: 3px 1em;
+	margin: 1px 0;
+	font-weight: bold;
+	background-color: #ebf9fe;
+}
+
+/* specific rail modules: sidebar navigation: hover states */
+
+#content #rail li.hover {
+	cursor: pointer;
+	color: #444;
+	text-decoration: underline;
+}
+#content #rail li.hover a {
+	color: #444;
+}
+
+/* specific rail modules: icons */
+
+#content #rail ul.icons a h3 {
+	text-decoration: underline;
+}
+#content #rail ul.icons {
+	margin-left: -8px !important;
+}
+#content #rail ul.icons li {
+	padding-left: 55px;
+	background-repeat: no-repeat;
+	background-position: 0 4px;
+}
+* html #content #rail ul.icons li {
+	width: 200px;
+}
+#content #rail ul.icons li#designIcon {
+	background-image: url(../sites/pfd/img/rail/icons/design.png);
+}
+#content #rail ul.icons li#buildIcon {
+	background-image: url(../sites/pfd/img/rail/icons/build.png);
+}
+#content #rail ul.icons li#serveIcon {
+	background-image: url(../sites/pfd/img/rail/icons/serve.png);
+}
+#content #rail ul.icons li#solveIcon {
+	background-image: url(../sites/pfd/img/rail/icons/solve.png);
+}
+
+/* shared styles */
+
+.block {
+	display: block;
+}
+.inline {
+	display: inline;
+}
+body #container .compact {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+#content .left {
+	float: left;
+	margin: 0 6px 6px 0 !important;
+}
+#content .right {
+	float: right;
+	margin: 0 0 6px 6px !important;
+}
+#content #rail .railBlock .top {
+	padding-top: 6px !important;
+}
+
+/* shared styles: microformats*/
+
+#content div.vcard .org {
+	font-weight: bold;
+}
+#content div.vcard .country-name,
+#content div.vcard .adr .type,
+#content div.vcard .tel .type {
+	display: none;
+}
+#content div.vcard div {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+#content div.vcard abbr {
+	text-decoration: none;
+}
+#content div.vcard a.email {
+	display: block;
+}
+#content div.vcard .tel .prefix {
+	display: none;
+}
+
+#content .noAddress,
+#content .noCompany,
+#content .noPhone,
+#content .noEmail{
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+#content .noName div.vcard .n {
+	display: none;
+}
+#content .noCompany div.vcard .org {
+	display: none;
+}
+#content .noOrg div.vcard .organization-name {
+	display: none;
+}
+#content .noUnit div.vcard .organization-unit {
+	display: none;
+}
+#content .noAddress div.vcard .adr {
+	display: none;
+}
+#content .noPhone div.vcard .tel {
+	display: none;
+}
+#content .noCell div.vcard .cell {
+	display: none;
+}
+#content .noWork div.vcard .work {
+	display: none;
+}
+#content .noEmail div.vcard a.email {
+	display: none;
+}
+#content .noEmailPrimary div.vcard a.primary {
+	display: none;
+}
+#content .noEmailSecondary div.vcard a.secondary {
+	display: none;
+}
+
+/* shared styles: normal list */
+
+#content ul,
+#content ol,
+ol.classicList,
+ul.classicList {
+	margin-left: 1em;
+	padding-left: 2.5em;
+}
+#content ol li,
+ol.classicList li{
+	list-style: decimal outside;
+}
+#content ul li,
+ul.classicList li{
+	list-style: disc outside;
+}
+
+/* shared styles: pipe delimited list */
+
+ul.pipeDelimited{
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+ul.pipeDelimited li{
+	float: left;
+	margin-left: 5px;
+	padding-left: 5px;
+	border-left: 1px solid black;
+
+}
+ul.pipeDelimited li.first{
+	margin-left: 0;
+	padding-left: 0;
+	border-left: 0;
+}
+
+/* float clearing */
+
+* html label,
+* html #footer dl.contact,
+* html #footer,
+* html #footer ul#footerNav,
+* html #footer ul#footerNav li.newsletter,
+* html #head,
+* html #content,
+* html #content .article,
+* html #rail,
+* html #nav,
+* html #nav ul#subNav,
+* html #nav ul#topNav{
+	height: 1%;
+	overflow: visible;
+}
+
+*+html label,
+*+html #footer dl.contact,
+*+html #footer,
+*+html #footer ul#footerNav,
+*+html #footer ul#footerNav li.newsletter,
+*+html #head,
+*+html #content,
+*+html #content .article,
+*+html #rail,
+*+html #nav,
+*+html #nav ul#subNav,
+*+html #nav ul#topNav{
+	min-height: 1%;
+}
+
+label:after,
+#footer dl.contact:after,
+#footer:after,
+#footer ul#footerNav:after,
+#footer ul#footerNav li.newsletter:after,
+#head:after,
+#content:after,
+#content .article:after,
+#rail:after,
+#nav:after,
+#nav ul#subNav:after,
+#nav ul#topNav:after{
+	clear: both;
+	content: ".";
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
+
+/* IE6 hacks for image transparency */
+
+img,
+#content #rail .railBlock .header,
+#content #rail .railBlock ul.icons li {
+	behavior: url(../sites/pfd/css/iepngfix2.htc);
+}
+
+

@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>jQuery: Adding maxlength to your textarea</title>
+	<link rel="stylesheet" href="../../master.css" media="screen">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+	<script type="text/javascript">
+	jQuery(function($) {
+	
+		// ignore these keys
+		var ignore = [8,9,13,33,34,35,36,37,38,39,40,46];
+		
+		// use keypress instead of keydown as that's the only 
+		// place keystrokes could be canceled in Opera
+		var eventName = 'keypress';
+		
+		// handle textareas with maxlength attribute
+		$('textarea[maxlength]')
+			
+			// this is where the magic happens
+			.live(eventName, function(event) {
+				var self = $(this),
+					maxlength = self.attr('maxlength'),
+					code = $.data(this, 'keycode');
+			
+				// check if maxlength has a value.
+				// The value must be greater than 0
+				if (maxlength && maxlength > 0) {
+			
+					// continue with this key stroke if maxlength
+					// not reached or one of the ignored keys were pressed.
+					return ( self.val().length < maxlength
+						|| $.inArray(code, ignore) !== -1 );
+					
+				}
+			})
+			
+			// store keyCode from the keydown event for later use
+			.live('keydown', function(event) {
+				$.data(this, 'keycode', event.keyCode || event.which);
+			});
+	
+	});
+	</script>
+</head>
+<body>
+	<div id="page">
+		<div id="header">
+			<h1>jQuery: Adding maxlength to your textarea</h1>
+		</div>
+		<div id="content">
+			<p>A demonstration of Textarea maxlength.</p>
+			
+			<p>This is limited:<br /><textarea cols="30" rows="5" maxlength="10"></textarea></p>
+			<p>This is not limited:<br /><textarea cols="30" rows="5"></textarea></p>
+
+			<p><a href="http://yelotofu.com/2009/12/jquery-textarea-max-length/">Read original blog post</a></p>
+		</div>
+	</div>
+</body>
+</html>
