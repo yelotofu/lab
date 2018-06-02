@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Table colgroup example</title>
+<style type="text/css">
+	#friends {
+		border:thin solid black;
+	}
+	#friends tfoot {
+		text-align:right;
+		font-size:1em;
+	}
+	#friends .id {
+		width:20px;
+		font-size:2em;
+		border:thick solid black;
+		font-family:Geneva, Arial, Helvetica, sans-serif;
+	}
+	#friends .name {
+		/* supported */
+		width:150px;
+		background-color:gray;		
+		font-family:Geneva, Arial, Helvetica, sans-serif;		
+				
+		/* not supported */		
+		text-align:left;
+		font-size:2em;
+		padding:20px;
+		text-indent:20px;
+		color:#fff;
+		font-family:"Lucida Sans",Verdana, Arial, Helvetica, sans-serif;		
+	}
+	#friends .dob {
+		width:100px;	
+		background-color:#369;
+		color:#eee;
+		font-family:Verdana, Arial, Helvetica, sans-serif;
+		text-align:center;
+	}
+	#friends .tbc {
+		width:50px;		
+		text-align:center;
+		color:red;
+		background-color:#fee;		
+	}
+	#friends .action {
+		background:#eee;
+		text-align:center;				
+		color:#666;
+	}
+	#friends .action a {
+		color:#369;		
+	}
+</style>
+</head>
+
+<body>
+<table border="0" cellpadding="4" cellspacing="0" id="friends" summary="This is a table of my ficticous friends. ID, Friend's name, DOB.">
+	<caption>Table colgroup example</caption>
+	<colgroup class="id" />
+	<colgroup class="name" />
+	<colgroup class="dob" />
+	<colgroup class="tbc" />
+	<colgroup class="action" />			
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Friend</th>
+			<th>DOB</th>
+			<th>Met in Person</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr>
+			<td colspan="5">&laquo; <a href="#">Prev</a> | <a href="#">Next</a> &raquo;</td>
+		</tr>
+	</tfoot>
+	<tbody>
+		<tr>
+			<td>1</td>
+			<td>Joe</td>
+			<td>4-Jan-1965</td>
+			<td>Yes</td>
+			<td> [ <a href="#">edit</a> ] </td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>Sarah</td>
+			<td>5-Jul-1983</td>
+			<td>No</td>
+			<td> [ <a href="#">edit</a> ] </td>
+		</tr>		
+		<tr>
+			<td>3</td>
+			<td>Peter</td>
+			<td>9-Aug-1950</td>
+			<td>Yes</td>
+			<td> [ <a href="#">edit</a> ] </td>
+		</tr>		
+	</tbody>
+</table>
+</body>
+</html>
