@@ -1,0 +1,142 @@
+/***************************************************
+# CSS_JS_MENU [ Main navigation ]
+***************************************************/
+#navigation {
+	margin:0; 
+	padding:0;
+	width:980px;
+	height:26px;
+}
+#navigation ul {
+	position:absolute;
+	width:1000px;
+	margin:0; 
+	padding:0;
+	left:270px;
+}
+
+#menu {
+	position:absolute;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:75%; /* 12px approx */
+	z-index:100;	
+}
+#menu * {
+	margin:0;
+	padding:0;
+	list-style:none;	
+}
+#menu li {
+	float:left;
+	position:relative;
+	background:url(../../images/menu/tab_end.gif) 100% 0 no-repeat;
+	margin:0 3px;
+	
+}
+#menu li:hover, 
+#menu li.lemHover,
+#menu li.selected {
+	background:url(../../images/menu/tab_end_on.gif) 100% 0 no-repeat;	
+}
+
+#menu li:hover {
+	z-index:1;
+}
+
+#menu li li {
+	float:none;
+	display:block;
+	margin:0;
+}
+#menu li li,
+#menu li li:hover,
+#menu li li.lemHover,
+#menu li.lemHover li {
+	background:url(../../images/menu/separator.gif) 0 100% repeat-x;
+	width:100%;
+}
+#menu li li:last-child, 
+#menu li li.lemLastChild {
+	background:none;
+}
+#menu li ul {
+	position:absolute;
+	width:auto;
+	height:auto;
+	background:url(../../images/menu/menu-bg.gif) 100% 100% no-repeat;	
+	border-left:1px solid #ccc;	
+}
+#menu li ul,
+#menu li ul ul,
+#menu li:last-child ul ul,
+#menu li li:last-child ul,
+#menu li.lemLastChild ul ul,
+#menu li li.lemLastChild ul {
+	width:193px;
+}
+#menu li:last-child ul,
+#menu li.lemLastChild ul {
+	width:241px;
+}
+#menu li ul ul {
+	margin-left:80%;
+/*	margin-top:-33px; */
+	border-top:1px solid #ccc;
+	top:0;
+}
+#menu li ul, 
+#menu li:hover ul ul, 
+#menu li:hover ul ul ul, 
+#menu li.lemHover ul ul, 
+#menu li.lemHover ul ul ul {
+	left:-999em;
+	z-index:100;
+}
+#menu li:hover ul, 
+#menu li li:hover ul, 
+#menu li li li:hover ul, 
+#menu li.lemHover ul, 
+#menu li li.lemHover ul, 
+#menu li li li.lemHover ul {
+	left:auto;
+}
+#menu a {
+	display:block;
+	color:#fff;
+	text-decoration:none;
+	font-size:1.1em;
+	background:url(../../images/menu/tab_start.gif) 0 0 no-repeat;	
+	padding:5px 0;
+	font-weight:bold;	
+	position:relative;
+}
+#menu a span {
+	padding:0 12px;
+}
+#menu a:hover, 
+#menu li:hover a, 
+#menu li.lemHover a, 
+#menu li.selected a {
+	color:#006;
+	background:url(../../images/menu/tab_start_on.gif) 0 0 no-repeat;		
+}
+#menu li li a, 
+#menu li:hover li a, 
+#menu li.lemHover li a {
+	width:100%;
+	font-size:1em;
+	color:#006;
+	background:none;
+	padding:9px 0;
+	font-weight:normal;
+}
+#menu li li a span {
+	padding:0 12px;
+}
+#menu li li a:hover {
+	color:#c00;
+	background:none;
+}
+#menu li li a:hover span {
+	background:url(../../images/menu/ico_arrow.gif) 100% 50% no-repeat;
+}

@@ -1,0 +1,6 @@
+/***************************************************
+# CSS_JS_MENU [ Main navigation - IE6 Specific styles ]
+***************************************************/
+html {
+  filter: expression(document.execCommand("BackgroundImageCache", false, true));
+}

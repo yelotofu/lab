@@ -1,0 +1,110 @@
+/***************************************************
+# CSS_JS_MENU [ Main navigation - IE6 Specific styles ]
+***************************************************/
+html {
+  filter: expression(document.execCommand("BackgroundImageCache", false, true));
+}
+
+#nav .bottomShadow {
+	left:0;
+	bottom:-9px;
+	background-image:none;
+}
+#nav li div {
+	cursor:pointer;
+	visibility:hidden;
+}
+#nav li.level1 {
+	height:25px;
+}
+#nav li.level1 a {
+	position:absolute;
+	visibility:visible;
+}
+#nav li.sfhover div {
+	visibility:visible;
+}
+#nav li.sfhover div a {
+	position:relative;
+}
+#nav li.sfhover ul {
+	height:auto;
+}
+#nav li.level1 {
+	background-position:100% 8px;
+}
+
+/* 
+ *This is a BIG hack!!! 
+ */
+#navRealtime.sfhover div {
+	height:72px;
+}
+#navHistorical.sfhover div {
+	height:72px;
+}
+#navEndOfDay.sfhover div {
+/*	height:72px; */
+}
+#navResearch.sfhover div {
+	height:96px;
+}
+#navData.sfhover div {
+	height:120px;
+}
+
+/* Menu width @ 115px */
+li#navEndOfDay .bottomShadow {
+	background-image:none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/menu/115/menu_bottom.png', sizingMethod='crop');	 
+}
+#navEndOfDay div {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/menu/115/menu_top_long.png', sizingMethod='crop'); 
+}
+#navEndOfDay.sfhover ul, #navEndOfDay li.sfhover ul {
+	background:url(../../images/menu/115/menu_bg.gif) 50% 0 repeat-y; 
+}
+#navEndOfDay ul li ul {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/menu/115/menu_bg.png', sizingMethod='scale'); 
+	width:115px;
+}
+
+/* Menu width @ 205px */
+li#navResearch .bottomShadow {
+	background-image:none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/menu/205/menu_bottom.png', sizingMethod='crop');	 
+}
+#navResearch div {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/menu/205/menu_top_long.png', sizingMethod='crop'); 
+}
+#navResearch.sfhover ul, #navResearch li.sfhover ul {
+	background:url(../../images/menu/205/menu_bg.gif) 50% 0 repeat-y; 
+}
+#navResearch ul li ul {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/menu/205/menu_bg.png', sizingMethod='scale'); 
+	width:205px;
+}
+
+/* Menu width @ 165px */
+#navRealtime .bottomShadow,
+#navHistorical .bottomShadow,
+#navData .bottomShadow {
+	background-image:none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/menu/165/menu_bottom.png', sizingMethod='crop');
+}
+#navRealtime div,
+#navHistorical div,
+#navData div {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/menu/165/menu_top_long.png', sizingMethod='crop'); 
+}
+#navRealtime.sfhover ul, #navRealtime li.sfhover ul,
+#navHistorical.sfhover ul, #navHistorical li.sfhover ul,
+#navData.sfhover ul, #navData li.sfhover ul {
+	background:url(../../images/menu/165/menu_bg.gif) 50% 0 repeat-y; 
+}
+#navRealtime ul li ul,
+#navHistorical ul li ul,
+#navData ul li ul {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/menu/165/menu_bg.png', sizingMethod='scale'); 
+	width:165px;
+}
